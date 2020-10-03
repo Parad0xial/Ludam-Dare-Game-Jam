@@ -22,6 +22,14 @@ public class PlayerController : MonoBehaviour
         if(Input.GetMouseButton(1)){
             RotateRight();
         };
+
+        if (Input.GetKey("a")){
+            RotateLeft();
+		}
+
+        if (Input.GetKey("d")){
+            RotateRight();  
+		}
     }
 
     void RotateLeft () {
