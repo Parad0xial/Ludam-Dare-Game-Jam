@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float speed = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,12 +15,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)){
-             //rotato stuff to the right or left mouse
+        if(Input.GetMouseButton(0)){
+             RotateLeft();
         };
            
-        if(Input.GetMouseButtonDown(1)){
-            //rotato stuff to the left or left mouse
+        if(Input.GetMouseButton(1)){
+            RotateRight();
         };
+    }
+
+    void RotateLeft () {
+        transform.Rotate (Vector3.forward * speed);
+    }
+
+    void RotateRight () {
+        transform.Rotate (Vector3.forward * -speed);
     }
 }
