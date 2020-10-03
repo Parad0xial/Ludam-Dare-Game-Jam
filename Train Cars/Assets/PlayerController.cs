@@ -36,9 +36,9 @@ public class PlayerController : MonoBehaviour
     }
 
     //collision detections
-    void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-       Debug.Log("OnCollisionEnter2D");
+       Debug.Log("Hit");
     }
 
     void RotateLeft () {
