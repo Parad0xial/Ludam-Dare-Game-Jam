@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5;
-
+    public LevelChanger lc;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -37,10 +38,10 @@ public class PlayerController : MonoBehaviour
     }
 
     //collision detections
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-       Debug.Log("Hit");
-       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+       Debug.Log("hit");
+       lc.FadeToMenu(1);
     }
 
     void RotateLeft () {
