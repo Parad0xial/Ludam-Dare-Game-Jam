@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //input detection
         if(Input.GetMouseButton(0)){
              RotateLeft();
         };
@@ -30,6 +31,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("d")){
             RotateRight();  
 		}
+
+        
+    }
+
+    //collision detections
+    void OnCollisionEnter2D(Collision2D col)
+    {
+       Debug.Log("OnCollisionEnter2D");
     }
 
     void RotateLeft () {
