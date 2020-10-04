@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other)
     {
        Debug.Log("hit");
+       DeathAnimation sn = other.GetComponent<DeathAnimation>();
+       sn.DeathEffect();
        FadeToLevel(1);  
     }
 
@@ -65,5 +67,6 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("SamFadeOut");
 	}
 
+    
     
 }
