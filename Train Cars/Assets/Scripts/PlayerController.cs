@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5;
-    public LevelChanger lc;
+
+
+    public Animator animator;
+    private int levelToLoad;
     
     // Start is called before the first frame update
     void Start()
@@ -41,7 +44,7 @@ public class PlayerController : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other)
     {
        Debug.Log("hit");
-       lc.FadeToMenu(1);
+       FadeToLevel(1);  
     }
 
     void RotateLeft () {
@@ -51,4 +54,12 @@ public class PlayerController : MonoBehaviour
     void RotateRight () {
         transform.Rotate (Vector3.forward * -speed);
     }
+
+    public void FadeToLevel (int levelIndex)
+    {
+        levelToLoad = levelIndex;
+        animator.SetTrigger("SamFadeOut");
+	}
+
+    
 }
