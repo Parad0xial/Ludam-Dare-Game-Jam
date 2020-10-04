@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
 
     public Animator animator;
+    public Animator musicAnim;
     private int levelToLoad;
     
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //input detection
         if(Input.GetMouseButton(0)){
              RotateLeft();
@@ -58,6 +60,8 @@ public class PlayerController : MonoBehaviour
     public void FadeToLevel (int levelIndex)
     {
         levelToLoad = levelIndex;
+        musicAnim.SetTrigger("fadeOut");
+        Debug.Log("music trigger");
         animator.SetTrigger("SamFadeOut");
 	}
 
